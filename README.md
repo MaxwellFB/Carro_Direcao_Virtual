@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./img/Dirigindo.gif" />
+</p>
+
 # Carro com Direção Virtual
 Este projeto possui o objetivo de simular a direção de um carro com apenas o movimento da mão. Para isso foi utilizado Mediapipe e aprendizado profundo (usado Pytorch) para capturar e processar os movimentos da mão e para o ambiente virtual do carro foi utilizado Microsoft Airsim e Unreal.
 
@@ -14,8 +18,6 @@ Caso deseje utilizar Anaconda, disponibilizei meu environment, chamado “driveC
 
 #### Python e bibliotecas:
 * Python v3.9.6
-  
-
 * Airsim v1.6.0
 * Gym v0.21.0
 * MediaPipe v0.8.7
