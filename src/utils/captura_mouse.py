@@ -38,7 +38,6 @@ class CapturaMouse:
         elif str(button) == 'Button.middle':
             if pressed:
                 self.acelerador = 42
-                self.encerrar()
             else:
                 self.acelerador = 0
 

@@ -1,11 +1,6 @@
-import setup_path
 import airsim
-import numpy as np
-import math
 import time
 
-import gym
-from gym import spaces
 from airgym.envs.airsim_env import AirSimEnv
 
 
@@ -14,7 +9,6 @@ class AirSimCarEnv(AirSimEnv):
         super().__init__()
 
         self.car = airsim.CarClient(ip=ip_address)
-
 
         self.car_controls = airsim.CarControls()
 
@@ -30,11 +24,6 @@ class AirSimCarEnv(AirSimEnv):
         self.car.reset()
 
     def _do_action(self, direction, accelerator):
-        # Frear
-        #if action == 0:
-        #    self.car_controls.throttle = 0
-        #    self.car_controls.brake = 1
-
         if accelerator == 42:
             self.reset()
             return None
@@ -63,22 +52,18 @@ class AirSimCarEnv(AirSimEnv):
             self.car_controls.throttle = -1
             self.car_controls.is_manual_gear = True
             self.car_controls.manual_gear = -1
-            #self.car_controls.brake = 0
         # Acelerar
         elif accelerator == 1:
             self.car_controls.throttle = 1
             self.car_controls.is_manual_gear = False
             self.car_controls.manual_gear = 0
-            #self.car_controls.brake = 0
 
         self.car.setCarControls(self.car_controls)
-        #time.sleep(1)
 
     def step(self, action):
         direction, accelerator = action
         self._do_action(direction, accelerator)
-        #return self.state
 
     def reset(self):
         self._setup_car()
-        self._do_action(0,0)
+        self._do_action(0, 0)

@@ -1,15 +1,10 @@
-import numpy as np
-import airsim
-
 import gym
-from gym import spaces
 
 
 class AirSimEnv(gym.Env):
     metadata = {"render.modes": ["rgb_array"]}
 
     def __init__(self):
-        #self.observation_space = spaces.Box(0, 255, shape=image_shape, dtype=np.uint8)
         self.viewer = None
 
     def __del__(self):
