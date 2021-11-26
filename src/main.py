@@ -26,7 +26,7 @@ class Sistema:
 
         try:
             # Localhost: ip_address="127.0.0.1"
-            self.car_env = AirSimCarEnv(ip_address="192.168.0.106")
+            self.car_env = AirSimCarEnv(ip_address="127.0.0.1")
         except Exception:
             raise Exception(
                 'Ambiente Airsim nao encontrado! Verifique se o ambiente foi inicializado e se o endereco esta correto.'
